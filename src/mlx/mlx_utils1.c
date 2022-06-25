@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 13:37:16 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 13:45:37 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:55:19 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 
 t_point	*make_hex_verts(int side, t_point center)
 {
-	t_point	center;
 	double	cospi6;
 
 	cospi6 = sqrt(3) / 2;

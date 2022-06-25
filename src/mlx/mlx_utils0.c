@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:52:38 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 13:37:50 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:52:04 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,7 +89,6 @@ void	put_iso_tri(t_data *data, int base, int height, t_color color)
 	lines[2] = (t_line){{off_x + (base / 2), off_y}, {off_x + base,
 		off_y + height}};
 	i = 0;
-	printf("Hello\n");
 	while (i < 3)
 		put_line(data, &(lines[i++]), color);
 }

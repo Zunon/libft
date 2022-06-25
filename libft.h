@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 13:28:01 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:54:56 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,13 +55,13 @@ typedef struct s_line {
 }	t_line;
 
 typedef struct s_data {
-	void			*img;
-	char			*addr;
-	int				bits_per_pixel;
-	int				line_length;
-	int				endian;
-	unsigned int	width;
-	unsigned int	height;
+	void	*img;
+	char	*addr;
+	int		bits_per_pixel;
+	int		line_length;
+	int		endian;
+	int		width;
+	int		height;
 }	t_data;
 
 typedef struct s_mlxd {
@@ -69,6 +69,16 @@ typedef struct s_mlxd {
 	void	*window;
 }	t_mlxd;
 
+void	put_grad_horizontal(t_data *data, t_color *colors, double begin,
+			double end);
+void	put_grad_vertical(t_data *data, t_color *colors, double begin,
+			double end);
+void	put_hexagon(t_data *data, int side, t_color color);
+void	put_line(t_data *data, t_line *line, t_color color);
+void	put_pixel(t_data *data, int x, int y, t_color color);
+void	put_rect(t_data *data, int width, int height, t_color color);
+void	put_iso_tri(t_data *data, int base, int height, t_color color);
+void	put_circle(t_data *data, int radius, t_color color);
 int		get_color(t_color color);
 t_color	make_color(int color);
 t_color	mix_colors(t_color from, t_color to, double amount);
