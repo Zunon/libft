@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 13:15:15 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:28:01 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
+# include <math.h>
 
 typedef enum e_bool {FALSE, TRUE}	t_bool;
 typedef unsigned char	t_byte;
@@ -26,6 +27,53 @@ typedef struct s_list
 
 }				t_list;
 
+typedef enum e_mlx_event {
+	ON_KEYDOWN = 2,
+	ON_KEYUP = 3,
+	ON_MOUSEDOWN = 4,
+	ON_MOUSEUP = 5,
+	ON_MOUSEMOVE = 6,
+	ON_EXPOSE = 12,
+	ON_DESTROY = 17
+}	t_mlx_event;
+
+typedef struct s_color {
+	unsigned char	alpha;
+	unsigned char	red;
+	unsigned char	green;
+	unsigned char	blue;
+}	t_color;
+
+typedef struct s_point {
+	int	x;
+	int	y;
+}	t_point;
+
+typedef struct s_line {
+	t_point	start;
+	t_point	end;
+}	t_line;
+
+typedef struct s_data {
+	void			*img;
+	char			*addr;
+	int				bits_per_pixel;
+	int				line_length;
+	int				endian;
+	unsigned int	width;
+	unsigned int	height;
+}	t_data;
+
+typedef struct s_mlxd {
+	void	*mlx;
+	void	*window;
+}	t_mlxd;
+
+int		get_color(t_color color);
+t_color	make_color(int color);
+t_color	mix_colors(t_color from, t_color to, double amount);
+t_color	add_shade(t_color color, double amount);
+t_color	get_opposite(t_color color);
 void	reset(size_t *m, size_t *n, long long int *startpos);
 int		ft_pow(int nb, int power);
 int		ft_printf(const char *str, ...);
