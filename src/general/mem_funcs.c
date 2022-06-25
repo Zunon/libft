@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:13:50 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:45:16 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:13:39 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, t_byte c, size_t n)
 	while (i < n)
 	{
 		if (((t_byte *)s)[i] == (t_byte)c)
-			return (s + i);
+			return ((void *)s + i);
 		i++;
 	}
 	return (0);

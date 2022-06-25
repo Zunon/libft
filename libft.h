@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:44:35 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 13:15:15 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,8 @@ typedef struct s_list
 
 }				t_list;
 
+void	reset(size_t *m, size_t *n, long long int *startpos);
+int		ft_pow(int nb, int power);
 int		ft_printf(const char *str, ...);
 int		count_valid_flags(const char *str);
 char	*ft_strchr(const char *s, int c);

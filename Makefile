@@ -6,44 +6,48 @@
 #    By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/30 12:12:15 by kalmheir          #+#    #+#              #
-#    Updated: 2022/06/25 12:26:59 by kalmheir         ###   ########.fr        #
+#    Updated: 2022/06/25 13:13:03 by kalmheir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 NAME		:=	libft.a
-MANDSDIR	:= src/mandatory
+MANDSDIR	:= src/general
 PRINTFDR	:= src/ft_printf
 ADTDIR		:= src/data_structures
-SRCDIRS		:= $(LIBCCOPY) $(LIBCNEWS) $(PRINTFDR) $(ADTDIR)
+SRCDIRS		:= $(MANDSDIR) $(PRINTFDR) $(ADTDIR)
 SOURCES		:= $(shell find $(SRCDIRS) -name '*.c')
 MLXUTILS	:= $(shell find src/mlx -name '*.c')
-MLXUOBJS	:= $(MLXUTILS:.c=.o)
-OBJECTS		= $(SOURCES:.c=.o)
-LIBC	= ar rc
-LIBR	= ranlib
-CC		= gcc
-RM		= rm -f
-CFLAGS	= -Wall -Wextra -Werror
+MLXUOBJS	:= $(MLXFLAGS) $(MLXUTILS:.c=.o)
+OBJECTS		:= $(SOURCES:.c=.o)
+LIBC		:= ar rcs
+CC			:= gcc
+RM			:= rm -f
+CFLAGS		:= -Wall -Wextra -Werror
+MLXFLAGS	:= -Imlx
+
+nomlxc: nomlx clean
+
+$(NAME): nomlx
 
 nomlx: $(OBJECTS)
+	$(LIBC) $(NAME) $(OBJECTS)
 
+allc: all clean
 
-all: $(OBJECTS) $(MLXUOBJS)
+all: $(NAME) $(OBJECTS) $(MLXUOBJS)
+	$(LIBC) $(NAME) $(OBJECTS) $(MLXUOBJS)
 
-$(OBJECTS):
+.c.o:
 	$(CC) $(CFLAGS) -c $< -o $(<:.c=.o)
 
-$()
-
-$(LBFT): $(OBJS)
-	$(LIBC) $(LBFT) $(OBJS)
-	$(LIBR) $(LBFT)
 
 clean:
-	$(RM) $(OBJS)
+	$(RM) $(OBJECTS)
+	$(RM) $(MLXUOBJS)
 
 fclean: clean
-	$(RM) $(LBFT)
-	$(RM) $(PGRM)
+	$(RM) $(NAME)
 
-re: fclean all
+re: fclean nomlx
+
+rea: fclean all
