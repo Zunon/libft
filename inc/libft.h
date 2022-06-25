@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 11:33:49 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 11:50:48 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,8 +28,8 @@ typedef struct s_list
 }				t_list;
 
 void	ft_bzero(void *s, size_t n);
-int		ft_toupper(int c);
-int		ft_tolower(int c);
+char	ft_toupper(char c);
+char	ft_tolower(char c);
 char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
