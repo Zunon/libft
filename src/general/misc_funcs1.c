@@ -6,20 +6,11 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 14:34:32 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 09:35:57 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:36:38 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../inc/libft.h"
-
-static int	ft_pow(int nb, int power)
-{
-	if (power < 0)
-		return (0);
-	if (power == 0)
-		return (1);
-	return (nb * ft_pow(nb, power - 1));
-}
 
 static char	fast_log10(int n)
 {

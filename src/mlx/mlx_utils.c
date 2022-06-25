@@ -6,11 +6,11 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:52:38 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 09:34:09 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:35:10 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/mlx.h"
+#include "../../../minilibx_mms_20191025_beta/mlx.h"
 #include <math.h>
 #include <stdio.h>
 #include <stdlib.h>

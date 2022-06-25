@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   misc_funcs.c                                       :+:      :+:    :+:   */
+/*   misc_funcs0.c                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:01:04 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:03:24 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:36:57 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,9 +65,18 @@ void	*ft_calloc(size_t count, size_t size)
 	return ((void *)area);
 }
 
-static void	reset(size_t *m, size_t *n, long long int *startpos)
+void	reset(size_t *m, size_t *n, long long int *startpos)
 {
 	*m = 0;
 	*n = (size_t)(*startpos);
 	*startpos = -1;
+}
+
+int	ft_pow(int nb, int power)
+{
+	if (power < 0)
+		return (0);
+	if (power == 0)
+		return (1);
+	return (nb * ft_pow(nb, power - 1));
 }
