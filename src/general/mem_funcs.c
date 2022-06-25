@@ -6,11 +6,11 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:13:50 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 11:22:44 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:45:16 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "../../libft.h"
 
 void	*ft_memchr(const void *s, t_byte c, size_t n)
 {

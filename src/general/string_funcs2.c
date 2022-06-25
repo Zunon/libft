@@ -6,11 +6,11 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:33:22 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:38:31 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:45:53 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "../../libft.h"
 
 int	word_len(char const *str, char sep)
 {

@@ -6,11 +6,11 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:06:31 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 11:20:06 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:45:10 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "../../libft.h"
 
 t_bool	ft_isalnum(char c)
 {

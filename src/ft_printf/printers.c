@@ -6,11 +6,11 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/30 18:33:34 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 09:38:18 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:45:01 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../inc/libft.h"
+#include "../../libft.h"
 
 /*
  * Function:  putstrip

@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 11:50:48 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 12:44:35 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,8 @@
 # define LIBFT_H
 
 # include <stdlib.h>
-# include <stdbool.h>
 # include <unistd.h>
-# include "ft_printf.h"
+# include <stdarg.h>
 
 typedef enum e_bool {FALSE, TRUE}	t_bool;
 typedef unsigned char	t_byte;
@@ -27,6 +26,18 @@ typedef struct s_list
 
 }				t_list;
 
+int		ft_printf(const char *str, ...);
+int		count_valid_flags(const char *str);
+char	*ft_strchr(const char *s, int c);
+void	putstrip(const char *str, char ignore_percent, size_t *count);
+void	put_charc(char c, size_t *count);
+void	put_pointerc(void *pointer, size_t *count);
+void	put_nbrc(int num, size_t *count);
+void	put_unbrc(unsigned int num, size_t *count);
+void	put_hex(unsigned int num, unsigned char isLower, size_t *count);
+void	put_longhex(unsigned long num, size_t *count);
+void	switcher(char c, va_list *list, size_t *chars);
+void	iterator(const char *str, va_list *list, size_t *count);
 void	ft_bzero(void *s, size_t n);
 char	ft_toupper(char c);
 char	ft_tolower(char c);
