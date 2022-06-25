@@ -3,6 +3,7 @@
 wip.*
 *.swp
 */wip*
+.vscode
 
 # Prerequisites
 *.d
