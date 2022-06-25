@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 09:39:59 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/25 11:33:49 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <stdbool.h>
 # include <unistd.h>
 # include "ft_printf.h"
 
+typedef enum e_bool {FALSE, TRUE}	t_bool;
+typedef unsigned char	t_byte;
 typedef struct s_list
 {
 	void			*content;
@@ -32,16 +35,16 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
 char	*ft_strchr(const char *s, int c);
-void	*ft_memset(void *b, int c, size_t len);
+void	*ft_memset(void *b, t_byte c, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);
 int		ft_memcmp(const void *s1, const void *s2, size_t n);
-void	*ft_memchr(const void *s, int c, size_t n);
-int		ft_isprint(int c);
-int		ft_isascii(int c);
-int		ft_isalpha(int c);
-int		ft_isalnum(int c);
-int		ft_isdigit(int c);
+void	*ft_memchr(const void *s, t_byte c, size_t n);
+t_bool	ft_isprint(char c);
+t_bool	ft_isascii(char c);
+t_bool	ft_isalpha(char c);
+t_bool	ft_isalnum(char c);
+t_bool	ft_isdigit(char c);
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize);
 int		ft_atoi(const char *str);
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len);
