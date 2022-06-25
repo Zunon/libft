@@ -1,3 +1,9 @@
+# Miscellaneous
+.DS_Store
+wip.*
+*.swp
+*/wip*
+
 # Prerequisites
 *.d
 
