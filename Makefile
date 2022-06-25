@@ -5,56 +5,55 @@
 #                                                     +:+ +:+         +:+      #
 #    By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2022/06/17 18:06:09 by kalmheir          #+#    #+#              #
-#    Updated: 2022/06/18 16:07:01 by kalmheir         ###   ########.fr        #
+#    Created: 2021/09/30 12:12:15 by kalmheir          #+#    #+#              #
+#    Updated: 2022/06/12 15:45:29 by kalmheir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-NAME =		minitalk
-SRVN =		server
-SRVS =		src/server/main.c src/server/utils.c
-CLIN =		client
-CLIS =		src/client/main.c
-BCLS =		extra/client/main_bonus.c
-BCLN =		client_bonus
-BSRN =		server_bonus
-BSRS =		extra/server/main_bonus.c extra/server/utils_bonus.c
-CC =		gcc
-CFLAGS =	-Wall -Wextra -Werror
-LBFT =		libft.a
-MKLB =		make -C lib
-MOVE =		mv lib/
+PGRM	=	push_swap
+MAIN	=	main.c
+UTIL	=	stackops.c pswap_utils0.c sort_algo.c pswap_utils1.c \
+			pswap_utils2.c
+SRCS	=	ft_bzero.c ft_digit.c ft_isalnum.c ft_isalpha.c \
+			ft_isascii.c ft_isprint.c ft_memchr.c ft_memcmp.c \
+			ft_memcpy.c ft_memmove.c ft_memset.c ft_strchr.c \
+			ft_strlen.c ft_strncmp.c ft_strrchr.c ft_tolower.c \
+			ft_toupper.c ft_strlcpy.c ft_strlcat.c ft_atoi.c \
+			ft_strnstr.c ft_calloc.c ft_strdup.c ft_substr.c \
+			ft_strjoin.c ft_strtrim.c ft_split.c ft_itoa.c \
+			ft_strmapi.c ft_striteri.c ft_putchar_fd.c \
+			ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c \
+			ft_printf0.c ft_printf1.c printers.c \
+			ft_lstnew.c ft_lstadd_front.c ft_lstsize.c \
+			ft_lstlast.c ft_lstadd_back.c ft_lstdelone.c \
+			ft_lstclear.c ft_lstiter.c ft_lstmap.c
+OBJS	= ${SRCS:.c=.o}
+LBFT	= libft.a
+LIBC	= ar rc
+LIBR	= ranlib
+CC		= gcc
+RM		= rm -f
+CFLAGS	= -Wall -Wextra -Werror
 
-mandatory: client server
+create: compile
 
-all: mandatory bonus
+all: ${LBFT} compile
 
-bonus: client_b server_b
+.c.o:
+	${CC} ${CFLAGS} -c $< -o ${<:.c=.o}
 
-${LBFT}:
-	${MKLB}
-	${MOVE}${LBFT} ${LBFT}
-	${MKLB} fclean
+${LBFT}: ${OBJS}
+	${LIBC} ${LBFT} ${OBJS}
+	${LIBR} ${LBFT}
 
-server: ${LBFT} ${SRVS}
-	${CC} ${CFLAGS} ${SRVS} ${LBFT} -o ${SRVN}
-
-client: ${LBFT} ${CLIS}
-	${CC} ${CFLAGS} ${CLIS} ${LBFT} -o ${CLIN}
-
-server_b: ${LBFT} ${BSRS}
-	${CC} ${CFLAGS} ${BSRS} ${LBFT} -o ${BSRN}
-
-client_b: ${LBFT} ${BCLS}
-	${CC} ${CFLAGS} ${BCLS} ${LBFT} -o ${BCLN}
+compile: ${LBFT}
+	${CC} ${CFLAGS} ${MAIN} ${UTIL} ${LBFT} -o ${PGRM}
 
 clean:
-	${RM} ${LBFT}
+	${RM} ${OBJS}
 
 fclean: clean
-	${RM} ${SRVN}
-	${RM} ${CLIN}
-	${RM} ${BSRN}
-	${RM} ${BCLN}
+	${RM} ${LBFT}
+	${RM} ${PGRM}
 
 re: fclean all
