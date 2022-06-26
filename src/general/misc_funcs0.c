@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:01:04 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 17:13:53 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 18:48:47 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,15 +28,14 @@ int	ft_atoi(const char *str)
 	int		dtc;
 
 	result = 0;
-	i = 0;
+	i = -1;
 	sign = 1;
-	while ((str[i] >= 0x09 && str[i] <= 0x0d) || str[i] == 0x20)
-		i++;
-	if (str[i] == '-')
-		sign = -1;
-	if (str[i] == '-' || str[i] == '+')
-		i++;
-	while (ft_isdigit((int)(str[i])))
+	while (ft_iswhitespace(str[++i]))
+		;
+	while (str[i] == '-' || str[i] == '+')
+		if (str[i++] == '-')
+			sign = -sign;
+	while (ft_isdigit(str[i]))
 	{
 		dtc = result;
 		result *= 10;
