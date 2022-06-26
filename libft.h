@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 18:52:45 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:14:34 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,7 +85,7 @@ t_color	make_color(int color);
 t_color	mix_colors(t_color from, t_color to, double amount);
 t_color	add_shade(t_color color, double amount);
 t_color	get_opposite(t_color color);
-void	reset(size_t *m, size_t *n, long long int *startpos);
+void	reset(char **haystack, size_t *m, size_t *n, char **startpos);
 int		ft_pow(int nb, int power);
 int		ft_printf(const char *str, ...);
 int		count_valid_flags(const char *str);

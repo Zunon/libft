@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:01:04 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 18:54:33 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:12:19 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,11 +89,11 @@ void	*ft_calloc(size_t count, size_t size)
  * @param startpos	Where the beginning of a partial match is, negative value on
  * a 'no match yet'.
  */
-void	reset(size_t *m, size_t *n, long long int *startpos)
+void	reset(char **haystack, size_t *m, size_t *n, char **startpos)
 {
 	*m = 0;
-	*n = (size_t)(*startpos);
-	*startpos = -1;
+	*n = *startpos - *haystack;
+	*startpos = 0;
 }
 
 /**

@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:55:38 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 19:08:13 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:14:03 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -114,8 +114,8 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
-	size_t			i[2];
-	long long int	startpos;
+	size_t	i[2];
+	char	*startpos;
 
 	if (haystack == needle || !*needle)
 		return ((char *)haystack);
@@ -123,20 +123,20 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		return (0);
 	i[0] = 0;
 	i[1] = 0;
-	startpos = -1;
+	startpos = 0;
 	while ((i[0] < len) && needle[i[1]] && haystack[i[0]])
 	{
 		if (haystack[i[0]] == needle[i[1]])
 		{
 			i[1]++;
-			if (startpos == -1)
-				startpos = i[0];
+			if (!startpos)
+				startpos = haystack + i[0];
 		}
 		else if (i[1])
-			reset(&i[1], &i[0], &startpos);
+			reset(&haystack, &i[1], &i[0], &startpos);
 		i[0]++;
 	}
-	if (!needle[i[1]])
-		return ((char *)(haystack + i[0] - ft_strlen(needle)));
+	if (!startpos)
+		return (startpos);
 	return (0);
 }
