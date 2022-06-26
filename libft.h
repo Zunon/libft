@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 15:47:05 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:44:48 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,7 +88,6 @@ void	reset(size_t *m, size_t *n, long long int *startpos);
 int		ft_pow(int nb, int power);
 int		ft_printf(const char *str, ...);
 int		count_valid_flags(const char *str);
-char	*ft_strchr(const char *s, int c);
 void	putstrc(const char *str, size_t *count);
 void	put_charc(char c, size_t *count);
 void	put_pointerc(void *pointer, size_t *count);
@@ -105,7 +104,7 @@ char	*ft_strrchr(const char *s, int c);
 int		ft_strncmp(const char *s1, const char *s2, size_t n);
 size_t	ft_strlen(const char *s);
 size_t	ft_strlcpy(char *dst, const char *src, size_t dstsize);
-char	*ft_strchr(const char *s, int c);
+char	*ft_strchr(const char *s, char c);
 void	*ft_memset(void *b, t_byte c, size_t len);
 void	*ft_memmove(void *dst, const void *src, size_t len);
 void	*ft_memcpy(void *dst, const void *src, size_t n);

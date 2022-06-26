@@ -6,12 +6,18 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 15:38:48 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:45:38 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:23:05 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
+/**
+ * @brief Prints the given character to the given file descriptor.
+ *
+ * @param c		Character to be printed.
+ * @param fd	File descriptor to be printed into.
+ */
 void	ft_putchar_fd(char c, int fd)
 {
 	if (fd < 0)
@@ -19,6 +25,12 @@ void	ft_putchar_fd(char c, int fd)
 	write(fd, &c, 1);
 }
 
+/**
+ * @brief Prints the given string to the given file descriptor, appending a new
+ * line afterwards
+ * @param s		String to be printed.
+ * @param fd	File descriptor to be printed into.
+ */
 void	ft_putendl_fd(char *s, int fd)
 {
 	if (!s || fd < 0)
@@ -27,6 +39,12 @@ void	ft_putendl_fd(char *s, int fd)
 	ft_putstr_fd("\n", fd);
 }
 
+/**
+ * @brief Prints the given number to the given file descriptor.
+ *
+ * @param n		Number to be printed.
+ * @param fd	File descriptor to be printed into.
+ */
 void	ft_putnbr_fd(int n, int fd)
 {
 	char	digit;
@@ -52,6 +70,12 @@ void	ft_putnbr_fd(int n, int fd)
 	write(fd, &digit, 1);
 }
 
+/**
+ * @brief Prints the given string to the given file descriptor.
+ *
+ * @param s		String to be printed.
+ * @param fd	File descriptor to be printed into.
+ */
 void	ft_putstr_fd(char *s, int fd)
 {
 	if (!s || fd < 0)

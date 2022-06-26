@@ -6,12 +6,19 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:40:31 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:45:59 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 18:10:11 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
+/**
+ * @brief Iterates through a string by applying a function on every character.
+ *
+ * @param s	String to be iterated through.
+ * @param f	Function to apply on each character, to be given its index and a
+ * pointer to that character.
+ */
 void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 {
 	unsigned int	i;
@@ -23,6 +30,15 @@ void	ft_striteri(char *s, void (*f)(unsigned int, char*))
 		(*f)(i - 1, &s[i - 1]);
 }
 
+/**
+ * @brief Builds a new string based on a mapping of a given string and a
+ * function to be applied on every character.
+ *
+ * @param s	String to be iterated through.
+ * @param f	Function to apply on each character, to be given its index and a
+ * pointer to that character.
+ * @return Newly allocated string which is a mapping of s mapped with f.
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	size_t			length;
@@ -42,6 +58,15 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	return (result);
 }
 
+/**
+ * @brief Trims specific characters away from a string and returns the trimmed
+ * substring.
+ * @param s1	String to be trimmed.
+ * @param set	String representing the set of characters to be trimmed out of
+ * the boundaries of s1.
+ * @return Newly allocated substring of s1 not containing characters from set at
+ * the boundaries.
+ */
 char	*ft_strtrim(char const *s1, char const *set)
 {
 	size_t	start_i;
@@ -60,6 +85,14 @@ char	*ft_strtrim(char const *s1, char const *set)
 	return (ft_substr(s1, start_i, end_i - start_i + 1));
 }
 
+/**
+ * @brief Allocates a string which is a substring of the given string.
+ *
+ * @param s		String from which to allocate a substring from.
+ * @param start	The index in which the substring should start.
+ * @param len	Length of the substring.
+ * @return Newly allocated substring of s.
+ */
 char	*ft_substr(char const *s, unsigned int start, size_t len)
 {
 	size_t	totlength;

@@ -6,13 +6,21 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/24 13:52:38 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 13:52:04 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 18:33:07 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../../minilibx_mms_20191025_beta/mlx.h"
 #include "../../libft.h"
 
+/**
+ * @brief Puts a pixel onto the image.
+ *
+ * @param data	Image data struct.
+ * @param x		x position from left of the image.
+ * @param y		y position top of image.
+ * @param color	Color of the pixel to be put.
+ */
 void	put_pixel(t_data *data, int x, int y, t_color color)
 {
 	char	*dst;
@@ -25,6 +33,13 @@ void	put_pixel(t_data *data, int x, int y, t_color color)
 	*((t_color *)dst) = color;
 }
 
+/**
+ * @brief Puts a line onto the image.
+ *
+ * @param data	Image data struct.
+ * @param line	Properties of the line (the two terminal points).
+ * @param color	Color of said line.
+ */
 void	put_line(t_data *data, t_line *line, t_color color)
 {
 	double	i;
@@ -54,6 +69,14 @@ void	put_line(t_data *data, t_line *line, t_color color)
 	}
 }
 
+/**
+ * @brief Puts a rectangle onto the image.
+ *
+ * @param data		Image data struct.
+ * @param width		Width of the rectangle.
+ * @param height	Height of the rectangle.
+ * @param color		Color of the lines that make up the rectangle.
+ */
 void	put_rect(t_data *data, int width, int height, t_color color)
 {
 	int		off_x;
@@ -74,6 +97,14 @@ void	put_rect(t_data *data, int width, int height, t_color color)
 		put_line(data, &(lines[i++]), color);
 }
 
+/**
+ * @brief Puts an isosceles triangle onto the image.
+ *
+ * @param data		Image data struct.
+ * @param base		Length of the base of the triangle.
+ * @param height	Height of the triangle.
+ * @param color		Color of the lines that make up triangle.
+ */
 void	put_iso_tri(t_data *data, int base, int height, t_color color)
 {
 	int		off_x;
@@ -93,6 +124,13 @@ void	put_iso_tri(t_data *data, int base, int height, t_color color)
 		put_line(data, &(lines[i++]), color);
 }
 
+/**
+ * @brief Puts a circle onto the image.
+ *
+ * @param data		Image data struct.
+ * @param radius	Radius of the circle.
+ * @param color		Color of the circle outline.
+ */
 void	put_circle(t_data *data, int radius, t_color color)
 {
 	double	i;

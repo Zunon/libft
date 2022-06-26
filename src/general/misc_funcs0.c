@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:01:04 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 16:21:00 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:13:53 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -101,9 +101,9 @@ void	reset(size_t *m, size_t *n, long long int *startpos)
 /**
  * @brief Recursive expontiating function.
  *
- * @param nb
- * @param power
- * @return int
+ * @param nb	Number to be raised to the given power.
+ * @param power	The exponent.
+ * @return nb^power
  */
 int	ft_pow(int nb, int power)
 {

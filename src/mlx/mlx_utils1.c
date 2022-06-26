@@ -6,12 +6,19 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 13:37:16 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 13:55:19 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 18:38:09 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
+/**
+ * @brief Creates an array of vertices of a regular hexagon centered at a point.
+ *
+ * @param side		Length of a side of the hexagon.
+ * @param center	Center of the hexagon.
+ * @return Array of points that make up the corners/vertices of the hexagon.
+ */
 t_point	*make_hex_verts(int side, t_point center)
 {
 	double	cospi6;
@@ -27,6 +34,13 @@ t_point	*make_hex_verts(int side, t_point center)
 	});
 }
 
+/**
+ * @brief Puts a regular hexagon onto the image.
+ *
+ * @param data	Image data struct.
+ * @param side	Length of a side of the hexagon.
+ * @param color	Color of the hexagon outline.
+ */
 void	put_hexagon(t_data *data, int side, t_color color)
 {
 	t_point	*vertices;
@@ -50,6 +64,14 @@ void	put_hexagon(t_data *data, int side, t_color color)
 		put_line(data, &edges[i++], color);
 }
 
+/**
+ * @brief Puts a vertical gradient at a specific portion of the image.
+ *
+ * @param data		Image data struct.
+ * @param colors	The two colors that make up the gradient.
+ * @param begin		Beginning of the gradient as a fraction of the image height.
+ * @param end		End of the gradient as a fraction of the image height.
+ */
 void	put_grad_vertical(t_data *data, t_color *colors, double begin,
 	double end)
 {
@@ -69,6 +91,14 @@ void	put_grad_vertical(t_data *data, t_color *colors, double begin,
 	}
 }
 
+/**
+ * @brief Puts a horizontal gradient at a specific portion of the image.
+ *
+ * @param data		Image data struct.
+ * @param colors	The two colors that make up the gradient.
+ * @param begin		Beginning of the gradient as a fraction of the image width.
+ * @param end		End of the gradient as a fraction of the image width.
+ */
 void	put_grad_horizontal(t_data *data, t_color *colors, double begin,
 	double end)
 {

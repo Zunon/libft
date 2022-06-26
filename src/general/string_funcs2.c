@@ -6,12 +6,19 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 13:33:22 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:45:53 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:58:56 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
+/**
+ * @brief Counts the length of a string until a specific character is
+ * encountered.
+ * @param str	Pointer to the beginning of the string.
+ * @param sep	Word terminator.
+ * @return Length of str until sep.
+ */
 int	word_len(char const *str, char sep)
 {
 	int	n;
@@ -22,6 +29,13 @@ int	word_len(char const *str, char sep)
 	return (n);
 }
 
+/**
+ * @brief Counts the amount of words in a given string using a given word
+ * separator.
+ * @param str	String to be iterated through.
+ * @param sep	Separator to terminate words.
+ * @return Number of words within the string.
+ */
 int	count_words(char const *str, char sep)
 {
 	if (!*str)
@@ -61,6 +75,13 @@ char	**returner(char const *str)
 	}
 }
 
+/**
+ * @brief Splits a string into an array of strings, by dividing the string when
+ * encountering a specific character.
+ * @param s	String to transform into an array of strings.
+ * @param c	Word separator.
+ * @return Null-terminated array of strings which are all portions of s.
+ */
 char	**ft_split(char const *s, char c)
 {
 	char	**result;
@@ -89,6 +110,13 @@ char	**ft_split(char const *s, char c)
 	return (result);
 }
 
+/**
+ * @brief Merges two strings into one larger string.
+ *
+ * @param s1	First string to join.
+ * @param s2	Second string to join.
+ * @return The combined string out of s1 and s2.
+ */
 char	*ft_strjoin(char const *s1, char const *s2)
 {
 	size_t	len1;

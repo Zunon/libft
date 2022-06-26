@@ -6,13 +6,19 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/10/03 14:34:32 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:45:33 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 17:19:48 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-static char	fast_log10(int n)
+/**
+ * @brief Optimally returns the number of digits in a given number in base 10.
+ *
+ * @param n	Number to apply the logarithmic function to
+ * @return Amount of digits the number would take in decimal notation.
+ */
+char	fast_log10(int n)
 {
 	if (n == (int)0x80000000)
 		return (10);
@@ -39,6 +45,12 @@ static char	fast_log10(int n)
 	return (10);
 }
 
+/**
+ * @brief Builds a string representation (decimal) of a given integer.
+ *
+ * @param n	Integer to be converted.
+ * @return Dynamically allocated string representation of n.
+ */
 char	*ft_itoa(int n)
 {
 	char	*result;
