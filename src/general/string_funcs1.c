@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:55:38 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 17:49:50 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 19:08:13 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,11 +29,7 @@ char	*ft_strdup(const char *s1)
 	newstr = malloc(len + 1);
 	if (!newstr)
 		return (0);
-	while (i < (len + 1))
-	{
-		newstr[i] = s1[i];
-		i++;
-	}
+	ft_strlcpy(newstr, s1, len + 1);
 	return (newstr);
 }
 
@@ -49,23 +45,13 @@ char	*ft_strdup(const char *s1)
 size_t	ft_strlcat(char *dst, const char *src, size_t dstsize)
 {
 	size_t	dstlen;
-	size_t	i;
-	size_t	j;
 
 	dstlen = ft_strlen(dst);
 	if (dstlen >= dstsize)
 		return (dstsize + ft_strlen(src));
 	if (!dstsize)
 		return (dstlen + ft_strlen(src));
-	i = dstlen;
-	j = 0;
-	while (j < (dstsize - dstlen - 1) && src[j])
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = 0;
+	ft_strlcpy(dst + dstlen, src, dstsize - dstlen);
 	return (dstlen + ft_strlen(src));
 }
 
@@ -124,6 +110,7 @@ int	ft_strncmp(const char *s1, const char *s2, size_t n)
  * @param needle	String to be searched for.
  * @param len		Length of the haystack.
  * @return Pointer to the first occurence of the needle inside the haystack.
+ * @TODO: #2 Rewrite strnstr
  */
 char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 {
