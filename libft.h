@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 18:42:05 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 18:52:45 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,6 +73,7 @@ void	put_grad_horizontal(t_data *data, t_color *colors, double begin,
 			double end);
 void	put_grad_vertical(t_data *data, t_color *colors, double begin,
 			double end);
+t_bool	ft_iswhitespace(char c);
 void	put_hexagon(t_data *data, int side, t_color color);
 void	put_line(t_data *data, t_line *line, t_color color);
 void	put_pixel(t_data *data, int x, int y, t_color color);

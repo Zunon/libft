@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:01:04 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 18:48:47 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 18:54:33 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,6 @@
  * numerical portion into an integer.
  * @param str	String to be parsed.
  * @return Integer parsed from str.
- * @TODO: #1 Modify function to accept more than one +/- sign.
  */
 int	ft_atoi(const char *str)
 {
