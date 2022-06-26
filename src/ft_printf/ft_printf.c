@@ -6,38 +6,29 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/15 16:32:16 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:44:46 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 15:47:18 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
-/*
- * Function:  ft_printf
- * --------------------
- * prints a formatted string to stdout that mimics the
- * original printf() from libc
+/**
+ * @brief Prints a formatted string to stdout the mimics the original printf()
+ * function from libc (stdio.h)
  *
- * parameters:
- *  str: input string, with formatting macros
- *  ...: variadic variables to be inserted into string
- *
- * returns: total number of printed characters
- *
- *
- * Requirements:
- * -------------
- * Doesn't implement the buffer management of printf()
- *
+ * @param str	Input string, with formatting macros.
+ * @param ...	Variadic variables to be printed out inside the string.
+ * @return Total number of printed characters
+ * @note Doesn't implement the buffer management of printf()
  * Handles the following conversions:
- *  %c: Character
- *  %s: String
- *  %p: Pointer (void * -> hex integer)
- *  %d and %i: Signed Integer
- *  %u: Unsigned Integer
- *  %x: Lowercase Hexadecimal Integer
- *  %X: Uppercase Hexadecimal Integer
- *  %%: Escaped % symbol
+ *  %c - Character
+ *  %s - String
+ *  %p - Pointer (void * -> hex integer)
+ *  %d and %i - Signed Integer
+ *  %u - Unsigned Integer
+ *  %x - Lowercase Hexadecimal Integer
+ *  %X - Uppercase Hexadecimal Integer
+ *  %% - Escaped % symbol
  */
 int	ft_printf(const char *str, ...)
 {
@@ -51,12 +42,25 @@ int	ft_printf(const char *str, ...)
 	return (chars);
 }
 
+/**
+ * @brief Prints a character to stdout while also incrementing the ft_printf()
+ * return value.
+ *
+ * @param c		Character to be printed.
+ * @param count	Pointer to where the count is stored.
+ */
 void	put_charc(char c, size_t *count)
 {
 	(*count)++;
 	write(STDOUT_FILENO, &c, 1);
 }
 
+/**
+ * @brief Prints an unsigned long number to stdout using hexadecimal radix.
+ *
+ * @param num	Number to be printed to stdout.
+ * @param count	Pointer to where the count is stored.
+ */
 void	put_longhex(unsigned long num, size_t *count)
 {
 	char	digit;
@@ -70,12 +74,19 @@ void	put_longhex(unsigned long num, size_t *count)
 	put_charc(digit, count);
 }
 
+/**
+ * @brief Chooses which printing function to be used based on the flag passed.
+ *
+ * @param c		Format specifier.
+ * @param list	Argument list to fetch values from.
+ * @param count	Pointer to where the count is stored.
+ */
 void	switcher(char c, va_list *list, size_t *count)
 {
 	if (c == 'c')
 		put_charc(va_arg(*list, int), count);
 	else if (c == 's')
-		putstrip(va_arg(*list, char *), 0, count);
+		putstrc(va_arg(*list, char *), count);
 	else if (c == 'p')
 		put_pointerc(va_arg(*list, void *), count);
 	else if (c == 'd' || c == 'i')
@@ -89,6 +100,14 @@ void	switcher(char c, va_list *list, size_t *count)
 		put_charc('%', count);
 }
 
+/**
+ * @brief Iterates through the formatted string, printing the string to stdout
+ * and passing format specifiers to switcher().
+ *
+ * @param str	Formatted string passed to ft_printf().
+ * @param list	Variadic argument list passed to ft_printf().
+ * @param count	Pointer to where the count is stored.
+ */
 void	iterator(const char *str, va_list *list, size_t *count)
 {
 	int	i;

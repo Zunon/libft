@@ -6,7 +6,7 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 22:31:56 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 15:47:05 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -89,12 +89,12 @@ int		ft_pow(int nb, int power);
 int		ft_printf(const char *str, ...);
 int		count_valid_flags(const char *str);
 char	*ft_strchr(const char *s, int c);
-void	putstrip(const char *str, char ignore_percent, size_t *count);
+void	putstrc(const char *str, size_t *count);
 void	put_charc(char c, size_t *count);
 void	put_pointerc(void *pointer, size_t *count);
 void	put_nbrc(int num, size_t *count);
 void	put_unbrc(unsigned int num, size_t *count);
-void	put_hex(unsigned int num, unsigned char isLower, size_t *count);
+void	put_hex(unsigned int num, t_bool isLower, size_t *count);
 void	put_longhex(unsigned long num, size_t *count);
 void	switcher(char c, va_list *list, size_t *chars);
 void	iterator(const char *str, va_list *list, size_t *count);
