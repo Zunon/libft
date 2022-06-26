@@ -6,12 +6,20 @@
 /*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 12:01:04 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/25 12:45:22 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/06/26 16:21:00 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../libft.h"
 
+/**
+ * @brief Parses a string into an integer. Skipping over the initial whitespace
+ * portion. Then skipping one plus or minus sign, then parsing the next
+ * numerical portion into an integer.
+ * @param str	String to be parsed.
+ * @return Integer parsed from str.
+ * @TODO: #1 Modify function to accept more than one +/- sign.
+ */
 int	ft_atoi(const char *str)
 {
 	char	sign;
@@ -40,15 +48,24 @@ int	ft_atoi(const char *str)
 	return (result);
 }
 
+/**
+ * @brief Sets each byte in a memory region to 0x00.
+ *
+ * @param s	Start of memory region.
+ * @param n	Length of memory region.
+ */
 void	ft_bzero(void *s, size_t n)
 {
-	size_t	i;
-
-	i = 0;
-	while (i < n)
-		((char *)s)[i++] = 0;
+	ft_memset(s, 0x00, n);
 }
 
+/**
+ * @brief Dynamically allocates a memory region for a given amount of items and
+ * the size of each of those items.
+ * @param count	Number of items to allocate for.
+ * @param size	Size of each item in terms of bytes.
+ * @return Start of the memory region allocated. Null on allocation failure.
+ */
 void	*ft_calloc(size_t count, size_t size)
 {
 	unsigned char	*area;
@@ -65,6 +82,15 @@ void	*ft_calloc(size_t count, size_t size)
 	return ((void *)area);
 }
 
+/**
+ * @brief Helper function for strnstr. Used on partial matches that led to a
+ * mismatch to recent the iterator variables and the boolean representing the
+ * beginning.
+ * @param m			Pointer to iterating variable of the haystack.
+ * @param n 		Pointer to iterating variable of the needle.
+ * @param startpos	Where the beginning of a partial match is, negative value on
+ * a 'no match yet'.
+ */
 void	reset(size_t *m, size_t *n, long long int *startpos)
 {
 	*m = 0;
@@ -72,6 +98,13 @@ void	reset(size_t *m, size_t *n, long long int *startpos)
 	*startpos = -1;
 }
 
+/**
+ * @brief Recursive expontiating function.
+ *
+ * @param nb
+ * @param power
+ * @return int
+ */
 int	ft_pow(int nb, int power)
 {
 	if (power < 0)
