@@ -43,7 +43,7 @@ t_bool	ft_isalpha(char c)
  */
 t_bool	ft_isascii(char c)
 {
-	return (c >= 0x00 && c <= 0x7F);
+	return (c >= 0);
 }
 
 /**
