@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+         #
+#    By: kalmheir <kalmheir@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2021/09/30 12:12:15 by kalmheir          #+#    #+#              #
-#    Updated: 2022/06/25 13:13:03 by kalmheir         ###   ########.fr        #
+#    Updated: 2022/07/30 18:11:55 by kalmheir         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,8 @@ NAME		:=	libft.a
 MANDSDIR	:= src/general
 PRINTFDR	:= src/ft_printf
 ADTDIR		:= src/data_structures
-SRCDIRS		:= $(MANDSDIR) $(PRINTFDR) $(ADTDIR)
+GNLDIR		:= src/get_next_line
+SRCDIRS		:= $(MANDSDIR) $(PRINTFDR) $(ADTDIR) $(GNLDIR)
 SOURCES		:= $(shell find $(SRCDIRS) -name '*.c')
 MLXUTILS	:= $(shell find src/mlx -name '*.c')
 MLXUOBJS	:= $(MLXFLAGS) $(MLXUTILS:.c=.o)

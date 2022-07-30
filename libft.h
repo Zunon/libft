@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: kalmheir <kalmheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/09/30 19:55:53 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 19:14:34 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/07/30 17:48:43 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,9 @@
 # include <unistd.h>
 # include <stdarg.h>
 # include <math.h>
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 1
+# endif
 
 typedef enum e_bool {FALSE, TRUE}	t_bool;
 typedef unsigned char	t_byte;
@@ -69,6 +72,7 @@ typedef struct s_mlxd {
 	void	*window;
 }	t_mlxd;
 
+char	*get_next_line(int fd);
 void	put_grad_horizontal(t_data *data, t_color *colors, double begin,
 			double end);
 void	put_grad_vertical(t_data *data, t_color *colors, double begin,

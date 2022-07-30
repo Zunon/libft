@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   string_funcs1.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: kalmheir <kalmheir@student.42abudhabi.a    +#+  +:+       +#+        */
+/*   By: kalmheir <kalmheir@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/25 11:55:38 by kalmheir          #+#    #+#             */
-/*   Updated: 2022/06/26 19:14:03 by kalmheir         ###   ########.fr       */
+/*   Updated: 2022/07/30 18:11:02 by kalmheir         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -130,10 +130,10 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 		{
 			i[1]++;
 			if (!startpos)
-				startpos = haystack + i[0];
+				startpos = (char *)haystack + i[0];
 		}
 		else if (i[1])
-			reset(&haystack, &i[1], &i[0], &startpos);
+			reset(((char **)&haystack), &i[1], &i[0], &startpos);
 		i[0]++;
 	}
 	if (!startpos)
