@@ -10,7 +10,11 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../../../minilibx_mms_20191025_beta/mlx.h"
+#ifdef __APPLE__
+#	include "../../../minilibx_mms_20191025_beta/mlx.h"
+#else
+# include "../../../minilibx-linux/mlx.h"
+#endif
 #include "../../libft.h"
 
 /**
