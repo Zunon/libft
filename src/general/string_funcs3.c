@@ -120,3 +120,16 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	ft_strlcpy(result, s + start, actual_length + 1);
 	return (result);
 }
+
+char	*join_and_free(char *left, char *right, t_bool free_left,
+		   t_bool free_right)
+{
+	char	*result;
+
+	result = ft_strjoin(left, right);
+	if (free_left)
+		free(left);
+	if (free_right)
+		free(right);
+	return (result);
+}
