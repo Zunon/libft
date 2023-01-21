@@ -90,7 +90,7 @@ t_list	*ft_lstnew(void *content)
 {
 	t_list	*result;
 
-	result = malloc(sizeof(t_list));
+	result = ft_calloc(1, sizeof(t_list));
 	if (!result)
 		return (0);
 	result->content = content;

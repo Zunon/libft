@@ -61,7 +61,7 @@ char	*ft_itoa(int n)
 	i = 0;
 	digits = fast_log10(n);
 	neg = n < 0;
-	result = malloc(neg + digits + 1);
+	result = ft_calloc(neg + digits + 1, sizeof(char));
 	if (!result)
 		return (0);
 	if (neg)

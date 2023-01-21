@@ -58,7 +58,7 @@ char	**returner(char const *str)
 
 	if (!str)
 	{
-		result = malloc(sizeof(char *));
+		result = ft_calloc(1, sizeof(char *));
 		if (!result)
 			return (0);
 		result[0] = 0;
@@ -66,7 +66,7 @@ char	**returner(char const *str)
 	}
 	else
 	{
-		result = malloc(sizeof(char *) * 2);
+		result = ft_calloc(2, sizeof(char *));
 		if (!result)
 			return (0);
 		result[0] = ft_strdup(str);
@@ -94,7 +94,7 @@ char	**ft_split(char const *s, char c)
 		return (returner(s));
 	words = count_words(s, c);
 	i = 0;
-	result = malloc((words + 1) * sizeof(char *));
+	result = ft_calloc((words + 1), sizeof(char *));
 	if (!result)
 		return (0);
 	while (i < words)
@@ -131,7 +131,7 @@ char	*ft_strjoin(char const *s1, char const *s2)
 		return ((char *)s1);
 	len1 = ft_strlen(s1);
 	len2 = ft_strlen(s2);
-	result = malloc((len1 + len2 + 1) * sizeof(char));
+	result = ft_calloc((len1 + len2 + 1), sizeof(char));
 	if (!result)
 		return (0);
 	result[0] = 0;

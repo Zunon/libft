@@ -48,7 +48,7 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	if (!s || !f)
 		return (0);
 	length = ft_strlen(s);
-	result = malloc(length + 1);
+	result = ft_calloc(length + 1, sizeof(char));
 	if (!result)
 		return (0);
 	i = -1;
@@ -104,7 +104,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	totlength = ft_strlen(s);
 	if (start >= totlength)
 	{
-		result = malloc(sizeof(char));
+		result = ft_strdup("");
 		if (!result)
 			return (0);
 		result[0] = 0;
@@ -114,7 +114,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 		actual_length = len;
 	else
 		actual_length = totlength - start;
-	result = malloc((actual_length + 1) * sizeof(char));
+	result = ft_calloc((actual_length + 1), sizeof(char));
 	if (!result)
 		return (0);
 	ft_strlcpy(result, s + start, actual_length + 1);
