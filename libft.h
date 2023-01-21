@@ -146,4 +146,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void *));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(*f)(void *), void (*del)(void *));
 char	*join_and_free(char *left, char *right, t_bool fl, t_bool fr);
+int		fd_printf(int fd, const char *str, ...);
+int		fd_count_valid_flags(int fd, const char *str);
+void	fd_putstrc(int fd, const char *str, size_t *count);
+void	fd_put_charc(int fd, char c, size_t *count);
+void	fd_put_pointerc(int fd, void *pointer, size_t *count);
+void	fd_put_nbrc(int fd, int num, size_t *count);
+void	fd_put_unbrc(int fd, unsigned int num, size_t *count);
+void	fd_put_hex(int fd, unsigned int num, t_bool isLower, size_t *count);
+void	fd_put_longhex(int fd, unsigned long num, size_t *count);
+void	fd_switcher(int fd, char c, va_list *list, size_t *chars);
+void	fd_iterator(int fd, const char *str, va_list *list, size_t *count);
 #endif

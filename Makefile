@@ -13,9 +13,10 @@
 NAME		:=	libft.a
 MANDSDIR	:= src/general
 PRINTFDR	:= src/ft_printf
+FDPRINTFDR	:= src/fd_printf
 ADTDIR		:= src/data_structures
 GNLDIR		:= src/get_next_line
-SRCDIRS		:= $(MANDSDIR) $(PRINTFDR) $(ADTDIR) $(GNLDIR)
+SRCDIRS		:= $(MANDSDIR) $(PRINTFDR) $(ADTDIR) $(GNLDIR) $(FDPRINTFDR)
 SOURCES		:= $(shell find $(SRCDIRS) -name '*.c')
 MLXUTILS	:= $(shell find src/mlx -name '*.c')
 MLXUOBJS	:= $(MLXFLAGS) $(MLXUTILS:.c=.o)
