@@ -122,7 +122,7 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 }
 
 char	*join_and_free(char *left, char *right, t_bool free_left,
-		   t_bool free_right)
+			t_bool free_right)
 {
 	char	*result;
 
