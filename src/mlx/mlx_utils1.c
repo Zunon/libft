@@ -50,7 +50,6 @@ void	put_hexagon(t_data *data, int side, t_color color)
 
 	center = (t_point){data->width / 2, data->height / 2};
 	vertices = make_hex_verts(side, center);
-	i = -1;
 	edges = (t_line [6]){
 		(t_line){vertices[0], vertices[1]},
 		(t_line){vertices[1], vertices[2]},
