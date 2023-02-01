@@ -1,3 +1,5 @@
 # libft
 
-My (kalmheir)'s implementation and expansion of libft for use in C development
+kalmheir's implementation of libft with contributions from:
+- rriyas (@El-Draco)
+- aalghfel (@sadxmelon)
